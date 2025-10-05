@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Strona nie znaleziona</title>
+    <script>
+        // Ta funkcja przekierowuje wszystkie błędne adresy na główną stronę z www i https
+        var currentUrl = window.location.href;
+        var preferredDomain = 'https://www.kassjewel.com';
+
+        // Sprawdź, czy adres jest już na poprawnej domenie. Jeśli nie, przekieruj na główną.
+        if (!currentUrl.startsWith(preferredDomain)) {
+            window.location.replace(preferredDomain);
+        } else {
+            // Opcjonalnie: Jeśli chcesz przekierować z /kassjewel.com/kontakt na /www.kassjewel.com/kontakt
+            // var path = window.location.pathname;
+            // window.location.replace(preferredDomain + path);
+            
+            // Proste rozwiązanie: Wróć do głównej strony, aby uniknąć dalszych 404
+            window.location.replace(preferredDomain);
+        }
+    </script>
+</head>
+<body>
+    <p>Przekierowuję na poprawny adres...</p>
+    </body>
+</html>
